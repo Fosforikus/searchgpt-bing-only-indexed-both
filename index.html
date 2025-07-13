@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>TEST A8 – Bing-only robots, double indexation</title>
+</head>
+<body>
+  <h1>🧪 TEST A8 – Bing-only robots, double indexation</h1>
+
+  <h2>🔍 Objectif du test</h2>
+  <p>
+    Ce test vise à vérifier si SearchGPT s’appuie réellement sur Bing Search pour ses réponses.
+    La page est indexée manuellement dans <strong>Google ET Bing</strong>,
+    mais <code>Bingbot</code> est le <strong>seul robot autorisé</strong> à accéder au contenu.
+  </p>
+
+  <h2>🧾 Phrase absurde à détecter</h2>
+  <p><strong>Le flamant algorithmique de Grenoble jongle avec des hexagones inversés en langage COBOL quantique.</strong></p>
+
+  <h2>📁 Configuration robots.txt</h2>
+  <pre>
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: *
+Disallow: /
+  </pre>
+
+  <h2>📌 Résultat attendu</h2>
+  <p>
+    Si SearchGPT affiche cette phrase ou cite cette page, cela démontre qu’il utilise bien Bing Search.
+    Sinon, cela signifie qu’il ne s’appuie pas sur Bing, ou pas exclusivement.
+  </p>
+</body>
+</html>
