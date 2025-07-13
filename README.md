@@ -1,0 +1,1 @@
+# searchgpt-bing-only-indexed-both
